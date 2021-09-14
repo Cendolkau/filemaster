@@ -40,7 +40,7 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("Please wait...")
+        temp_msg = await message.reply("Sabar sayang....")
         try:
             messages = await get_messages(client, ids)
         except:
@@ -73,8 +73,8 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
+                    InlineKeyboardButton(" Jangan Klik", callback_data = "about"),
+                    InlineKeyboardButton(" Tutup", callback_data = "close")
                 ]
             ]
         )
@@ -94,7 +94,7 @@ async def start_command(client: Client, message: Message):
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
-    text = "<b> JOIN CHANNELNYA DULU OM !!! JANGAN MAU ENAK DOANG!! </b>"
+    text = "<b> JOIN CHANNELNYA DULU KALO MAU VIDEONYA TAMPIL !!! JANGAN MAU ENAK DOANG!! </b>"
     message_text = message.text
     try:
         command, argument = message_text.split()
